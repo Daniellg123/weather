@@ -20,14 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const cardStyle = {
     display: "block",
     transitionDuration: "0.3s",
-    height: "30vw"
+    height: "20vw",
 };
 
 const ShowWeather = (data) => {
     const dataWeather = data.data;
-    console.log(dataWeather.data ? dataWeather.data.weather[0].main : "no")
-    console.log(dataWeather.data);
-
     const classes = useStyles();
     let imgurl = '';
     let iconurl = '';
@@ -63,7 +60,10 @@ const ShowWeather = (data) => {
                                 dataWeather.data ? (
                                     <div>
                                         <Paper className={classes.paper}>
-                                        <img src={iconurl} alt="" srcset="" />
+                                            Ciudad: {dataWeather.data.name}
+                                        </Paper>
+                                        <Paper className={classes.paper}>
+                                            <img src={iconurl} alt="" set="" />
                                         </Paper>
                                         <Grid container item xs={12} spacing={3}>
                                             <Grid item xs={4}>
